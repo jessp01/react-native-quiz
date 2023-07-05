@@ -33,12 +33,12 @@ class Quiz extends React.Component {
     answerCorrect: false
   };
 
-  answer = correct => {
+  answer = (correct) => {
     this.setState(
       state => {
         const nextState = { answered: true };
 
-        if (correct) {
+	if (JSON.parse(correct)) {
           nextState.correctCount = state.correctCount + 1;
           nextState.answerCorrect = true;
         } else {
